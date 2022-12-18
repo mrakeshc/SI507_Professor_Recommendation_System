@@ -20,5 +20,9 @@ Installation of all this library can be done by running ``pip install -r require
 
 ## File distribution
 This repository contains the following files:
-1. `User_inputs.py`: A python file that helps users input information regarding universities and research areas. This file also has the capability to validate the user inputs and warn them.
-2.
+1. `user_inputs.py`: A python file that helps users input information regarding universities and research areas. This file also has the capability to validate the user inputs and warn them.
+2. `common.py`: This python file holds functions to load and save the json scripts for cacheing purposes.
+3. `profapi.py`: Python file that can conduct web scrapping and perform api calls to extract universities and professors information.
+4. `main.py`: Main python that does data processing and constructs a tree object based on the user inputs. This file also has a class object to save the data tree representation as a `JSON` file.
+5. `app.py`: This python file first imports the tree constructed in the `main.py` file and then use the rendered html template to display the tree in the local host http://127.0.0.1:5000/ 
+6. ``template/index.html`` A HTML script for flask.
