@@ -16,7 +16,7 @@ This github repository is a simple user interactive professor recommendation sys
 - requests==2.28.1
 - urllib3==1.26.13
 
-Installation of all this library can be done by running "pip install -r requirement.txt" in the appropriate terminal.
+Installation of all this library can be done by running ``pip install -r requirement.txt`` in the appropriate terminal.
 
 ## File distribution
 
