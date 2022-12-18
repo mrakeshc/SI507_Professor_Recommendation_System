@@ -20,4 +20,5 @@ Installation of all this library can be done by running ``pip install -r require
 
 ## File distribution
 This repository contains the following files:
-1. `User_inputs.py`
+1. `User_inputs.py`: A python file that helps users input information regarding universities and research areas. This file also has the capability to validate the user inputs and warn them.
+2.
