@@ -35,5 +35,6 @@ After installing all the necessary python libraries, please follow the below ste
 3. User then provides a `int` value telling the code to extract that many universites in the selected type of school. The schools are displayed in a ranking order based on `usnews` website
 4. The user then selects the university and enter the research area they are interested to find the professors in.
 
-After enteing this information in the terminal the flask uses the local host http://127.0.0.1:5000/ to display the list of all professors extracted based on the user specified information. ![plot](./SI507_Professor_Recommendation_System/screenshot/SI507_terminal.png)
+After enteing this information in the terminal the flask uses the local host http://127.0.0.1:5000/ to display the list of all professors extracted based on the user specified information. ![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![plot](./screenshot/SI507_terminal.png)
 
