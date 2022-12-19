@@ -39,7 +39,7 @@ After installing all the necessary python libraries, please follow the below ste
 ![plot](./screenshot/SI507_terminal.png)
 The above figure illustrates the user specific inputs.
 
-After enteing this information in the terminal the flask uses the local host http://127.0.0.1:5000/ to display the list of all professors extracted based on the user specified information. Below figure illustrates the tree created using Flas
+After enteing this information in the terminal the flask uses the local host http://127.0.0.1:5000/ to display the list of all professors extracted based on the user specified information. Below figure illustrates the tree created using Flask
 
 ![plot](./screenshot/SI507_flask.png)
 
