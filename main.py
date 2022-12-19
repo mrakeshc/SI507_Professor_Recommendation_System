@@ -1,6 +1,7 @@
 # Necessary imports for processing and create the tree structure.
 import json
 from common import common_functions
+import os
 
 from profapi import serpapi_scrape_all_authors_from_university
 from user_inputs import scrapping_caching_universities, inputs
@@ -42,13 +43,21 @@ def scraping_caching():
 
     """
     print("Welcome to the Professor Recommendation System")
+    #Enter the name of the json file to store the tree structure
+    cache_new_file = 'tree.json'
+    json_cache_dict = common_functions().load_cache_scholar(cache_new_file)
+    if len(json_cache_dict) > 0:
+        print("Cache found")
+        print("Would you like to use the information from previous search results or do you prefer new search results")
+        cache_input_yes_no = input("Please specify either 'yes' for keeping the previous search results or 'no' on the contrary: ")
+        if cache_input_yes_no == 'no':
+            json_cache_dict = []
+            os.remove("./tree.json")
     # Function calls to check for caching.
     final_dict_sorted = scrapping_caching_universities()
    
     name_university, research_area = inputs(final_dict_sorted)
-    cache_new_file = 'Professors.json'
-    json_cache_dict = common_functions().load_cache_scholar(cache_new_file)
-    
+        
     
     # Processing the data to get the unsorted university and professor information.
     key_dict = name_university + ' ' + research_area
@@ -59,12 +68,18 @@ def scraping_caching():
         json_cache_dict_temp = {}
         json_cache_dict_temp["text"] = key_dict
         json_cache_dict_temp["nodes"] = []
-        api_key = 'b9cff6a01b570d0396f69c2f1586994e8a82672bbe453259b4970dbaa4ee417c'
+        api_key = None #Create your api key from SerpAPI webpage
         # Extracting professors using the university and research area specified.
-        google_scholar_api = serpapi_scrape_all_authors_from_university(api_key, research_area.replace(" ", "_"), name_university)
-        json_scholar_cite = google_scholar_api.new()
-        if len(json_scholar_cite) == 0:
-            json_cache_dict_temp = {}
+        while True:
+            google_scholar_api = serpapi_scrape_all_authors_from_university(api_key, research_area.replace(" ", "_"), name_university)
+            json_scholar_cite = google_scholar_api.new()
+            if len(json_scholar_cite) == 0:
+                research_area = input("Please enter the research area you are interested in:")
+                # json_cache_dict_temp = {}
+            else:
+                key_dict = name_university + ' ' + research_area
+                json_cache_dict_temp["text"] = key_dict
+                break
         # Generating the tree whose representation is clearly explained in the
         # report. In simple words, the 'text' key corresponds to name of the node and
         # 'nodes' correponds to children for each node.

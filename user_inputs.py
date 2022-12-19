@@ -16,7 +16,6 @@ DETAIL_FIELDS = [
 
 HEADERS = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'}
 
-
 def scrapping_caching_universities():
     """
     The function mainly works in concurrence with the common functions files, mainly with the 'fetch_results_page' function.
@@ -27,7 +26,7 @@ def scrapping_caching_universities():
     """
     keys_dict = FIELDS + (DETAIL_FIELDS if DETAILED else [])
     url = 'https://www.usnews.com/best-colleges/api/search?_sort=schoolName&_sortDirection=asc&_page=1'
-    CACHE_FILE_NAME = 'Universities.json'
+    CACHE_FILE_NAME = 'universities.json'
     json_dict = common_functions().load_cache(CACHE_FILE_NAME)
     if len(json_dict) == 0:
         json_dict = dict(zip(keys_dict, ([] for _ in keys_dict)))    
@@ -75,7 +74,7 @@ def inputs(final_dict_sorted):
         print("{}.{}".format(i+1, all_universities[i]))
     while True:
         select_type = input("Please select the type of university you are looking for:")
-        if select_type.isdigit() and int(select_type) >= 1 and int(select_type) <= 9:
+        if select_type.isdigit() and int(select_type) >= 1 and int(select_type) <= 10:
             select_type = int(select_type)
             break
         else:

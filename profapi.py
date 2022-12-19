@@ -45,7 +45,7 @@ class serpapi_scrape_all_authors_from_university():
         while profiles_is_present:
             profile_results = search.get_dict()
             if 'error' in profile_results.keys():
-                print("Either the Research Area or the university_name you entered is incorrect")
+                print("Either the Research Area/university name you entered is incorrect or there are no professors working in the specified research field/uiversity.")
                 break
     
             for profile in profile_results["profiles"]:
