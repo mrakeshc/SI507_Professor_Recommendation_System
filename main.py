@@ -3,7 +3,7 @@ import json
 from common import common_functions
 
 from profapi import serpapi_scrape_all_authors_from_university
-from User_inputs import scrapping_caching_universities, inputs
+from user_inputs import scrapping_caching_universities, inputs
 
 """
 Important keys that can help to process the university and research area data scrapped 
