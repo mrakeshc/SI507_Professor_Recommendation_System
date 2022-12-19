@@ -1,7 +1,7 @@
 # SI507_Professor_Recommendation_System
 
 ## Getting Started
-This github repository is a simple user interactive professor recommendation system developed for prospective PhD students. The user has to select the "University" and specify the Research Area they are interesed in to get the list of all professors. We conduct web scraping on the https://www.usnews.com/ website to extract information on all the schools based in the United States of America. All the useful information about the professors is cached in a JSON file, and can be used directly rather than web scrapping or calling APIs everytime the user interacts with the system. 
+This github repository is a simple user interactive professor recommendation system developed for prospective PhD students. The user has to select the "University" and specify the Research Area they are interesed in to get the list of all professors. We conduct web scraping and perform api calls on the https://www.usnews.com/ and `SerpAPI` to extract the university and professor information from the Google Scholar page. The scope of the project is limited to United states. All the useful information about the professors is cached in a JSON file, and can be used directly rather than web scrapping or calling APIs everytime the user interacts with the system. 
 
 ### Setup
 Dependencies :-
@@ -35,6 +35,12 @@ After installing all the necessary python libraries, please follow the below ste
 3. User then provides a `int` value telling the code to extract that many universites in the selected type of school. The schools are displayed in a ranking order based on `usnews` website
 4. The user then selects the university and enter the research area they are interested to find the professors in.
 
-After enteing this information in the terminal the flask uses the local host http://127.0.0.1:5000/ to display the list of all professors extracted based on the user specified information. ![Alt text](relative/path/to/img.jpg?raw=true "Title")
+
 ![plot](./screenshot/SI507_terminal.png)
+The above figure illustrates the user specific inputs.
+
+After enteing this information in the terminal the flask uses the local host http://127.0.0.1:5000/ to display the list of all professors extracted based on the user specified information. Below figure illustrates the tree created using Flas
+
+![plot](./screenshot/SI507_flask.png)
+
 
